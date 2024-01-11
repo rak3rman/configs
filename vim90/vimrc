@@ -1,0 +1,47 @@
+"
+" vimrc
+" Radison Akerman 2024
+"
+
+" Configuration file for vim
+set modelines=0		" CVE-2007-2438
+
+" Normally we use vim-extensions. If you want true vi-compatibility
+" remove change the following statements
+set nocompatible	" Use Vim defaults instead of 100% vi compatibility
+set backspace=2		" more powerful backspacing
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+let skip_defaults_vim=1
+
+filetype off
+
+" vim-plug setup
+" Run :PlugInstall after adding new plugins.
+call plug#begin()
+
+Plug 'airblade/vim-gitgutter'                   " Show git diff of lines edited
+Plug 'tpope/vim-fugitive'                       " :Gblame
+Plug 'tpope/vim-rhubarb'                        " :GBrowse
+
+Plug 'pangloss/vim-javascript'                  " JavaScript support
+Plug 'leafgarland/typescript-vim'               " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'                 " JS and JSX syntax
+
+Plug 'psliwka/vim-smoothie'                     " Smooth scrolling
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Conquer of Completion
+
+call plug#end()
+filetype plugin indent on
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+
+" Terminal
+cabbrev bterm bo term
+set termwinsize=20x0
