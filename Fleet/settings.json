@@ -16,5 +16,7 @@
     "editor.distractionFreeMode": false,
     "goto_panel.showShortcuts": true,
     "terminal.enableFocusEditorOnEsc": true,
-    "editor.showInlayHints": true
+    "editor.showInlayHints": true,
+    "theme": "dark",
+    "git.autoFetch": false
 }
