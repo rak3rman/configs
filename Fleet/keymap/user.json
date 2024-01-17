@@ -43,6 +43,14 @@
     {
       "key": "ctrl-cmd-z",
       "trigger": "jump-to-terminal"
+    },
+    {
+      "key": "cmd-capslock",
+      "trigger": "show-tooltip"
+    },
+    {
+      "key": "ctrl-return",
+      "trigger": "show-tooltip"
     }
   ]
 }
