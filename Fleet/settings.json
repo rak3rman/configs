@@ -19,5 +19,5 @@
     "editor.showInlayHints": true,
     "theme": "dark",
     "git.autoFetch": false,
-    "editor.softWrapEnabled": true
+    "editor.softWrapEnabled": false
 }

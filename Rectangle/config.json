@@ -52,6 +52,9 @@
     "doubleClickTitleBar" : {
       "int" : 0
     },
+    "doubleClickTitleBarIgnoredApps" : {
+
+    },
     "doubleClickTitleBarRestore" : {
       "int" : 0
     },
@@ -182,7 +185,7 @@
       "float" : 1680
     },
     "stageSize" : {
-      "float" : 190
+      "float" : 140.55862
     },
     "subsequentExecutionMode" : {
       "int" : 0
@@ -272,7 +275,7 @@
       "modifierFlags" : 786432
     },
     "restore" : {
-      "keyCode" : 51,
+      "keyCode" : 15,
       "modifierFlags" : 1572864
     },
     "rightHalf" : {
@@ -296,5 +299,5 @@
       "modifierFlags" : 1572864
     }
   },
-  "version" : "80"
+  "version" : "81"
 }
