@@ -51,6 +51,14 @@
     {
       "key": "ctrl-return",
       "trigger": "show-tooltip"
+    },
+    {
+      "key": "shift-cmd-r",
+      "trigger": "replace-in-path"
+    },
+    {
+      "key": "cmd-shift-r",
+      "trigger": "-run/run-at-caret"
     }
   ]
 }
