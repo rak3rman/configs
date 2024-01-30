@@ -20,5 +20,40 @@
     "theme": "dark",
     "git.autoFetch": false,
     "editor.softWrapEnabled": true,
-    "editor.autoDetectIndentation": true
+    "editor.autoDetectIndentation": true,
+    "plugins": [
+        {
+            "type": "remove",
+            "pluginName": "fleet.aiCompletion"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.go.ai"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.java.ai"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.javascript.ai"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.kotlin.ai"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.python.ai"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.rust.ai"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.ai"
+        }
+    ],
+    "files.toggleFolderMode": "singleClick"
 }
