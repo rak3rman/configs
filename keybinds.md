@@ -22,9 +22,12 @@ Radison's personal set of keybinds, all in one place.
 | `Command-Comma` | Open preferences of focused app |
 | `Shift-Command-N` | Create new folder in Finder |
 
-## Global, Application Specific
+## Application Specific
 
 | Key(s) | Binding |
 | --- | --- |
-| `Option-Space` | Things 3, Quick Entry with Autofill (if context is available) |
-| `Option-Command-[*]` | Rectangle, regex command space, see toolbar for shortcuts |
+| `Option-Space` | Things 3 \[Global], Quick Entry with Autofill (if context is available) |
+| `Option-Command-[*]` | Rectangle \[Global], regex command space, see toolbar for shortcuts |
+| `Control-Command-RightArrow` | Safari, Show next tab |
+| `Control-Command-LeftArrow` | Safari, Show previous tab |
+| `Shift-Command-T` | Safari, Duplicate tab |

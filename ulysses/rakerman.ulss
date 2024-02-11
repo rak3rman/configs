@@ -249,8 +249,7 @@ list-all list-all {
 list-ordered {
 	enumeration-format:		"%p."
 	enumeration-style:		decimal
-	text-inset:				1em
-	// Simulates tab stop justified left
+	text-inset:				2em
 }
 
 list-ordered list-ordered {
@@ -258,10 +257,6 @@ list-ordered list-ordered {
 	enumeration-style:		lowercase-alpha
 	margin-left:			1em
 	text-inset:				1em
-	// Simulates tab stop justified left
-	margin-top: 			3.25pt
-	margin-bottom: 			3.25pt
-
 }
 
 list-ordered list-ordered list-ordered {
@@ -269,29 +264,23 @@ list-ordered list-ordered list-ordered {
 	enumeration-style:		lowercase-roman
 	margin-left:			1em
 	text-inset:				0em
-	// Simulates tab stop justified left
 }
 
 list-unordered {
 	enumeration-format:		"•"
 	text-inset:				0.8em
-	// Simulates tab stop justified left
 }
 
 list-unordered list-unordered {
 	enumeration-format:		"•"
-	margin-left:			0.8em
+	margin-left:			1em
 	text-inset:				0.8em
-	// Simulates tab stop justified left
-	margin-top: 			1.25pt
-	margin-bottom: 			1.25pt
 }
 
 list-unordered list-unordered list-unordered {
 	enumeration-format:		"•"
-	margin-left:			0.8em
+	margin-left:			1em
 	text-inset:				0.8em
-	// Simulates tab stop justified left
 }
 
 
