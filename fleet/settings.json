@@ -55,5 +55,6 @@
             "pluginName": "fleet.ai"
         }
     ],
-    "files.toggleFolderMode": "singleClick"
+    "files.toggleFolderMode": "singleClick",
+    "git.revert.confirm": false
 }

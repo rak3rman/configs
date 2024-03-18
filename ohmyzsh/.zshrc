@@ -16,6 +16,11 @@ gpg-connect-agent /bye
 export GPG_TTY=$(tty)
 
 #
+# Homebrew
+#
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+#
 # OH MY ZSH
 #
 
