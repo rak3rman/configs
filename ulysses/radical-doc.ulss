@@ -1,17 +1,15 @@
 //
-// RAkerman
-//
-// Export style to show clean layout
-// without markup
-//
-// Visit http://www.ulysses.app/styles
-// for full reference
+// RAkerman Doc Style Sheet
 //
 
 
 //
 // Document & Layout Settings
 //
+
+$primary = #212121
+$secondary = #586CB2
+$accent = #5E5E5E
 
 document-settings {
 	page-inset-top:		18mm;	page-inset-inner:	19mm
@@ -20,7 +18,7 @@ document-settings {
 	two-sided:				no
 	page-binding:			left
 
-	footnote-enumeration:	per-section
+	footnote-enumeration:	continuous
 	footnote-placement:		end-of-page
 	footnote-style:			decimal
 
@@ -33,27 +31,12 @@ document-settings {
 
 
 //
-// Footer area
-//
-
-area-footer {
-  font-color: #5E5E5E
-  font-size: 8.5pt
-  text-alignment: left
-  content: page-number
-  top-spacing: 6pt
-  bottom-spacing: 40pt
-}
-
-
-
-//
 // Default Typography
 //
 
 defaults {
 	font-family:			"SF Pro Display"
-	// other good options: Helvetica Neue, Baskerville, Century Schoolbook, Tahoma
+	font-color: $primary
 	
 	font-weight:			normal
 	font-size:				10pt
@@ -78,11 +61,11 @@ heading-all {
 }
 
 heading-1 {
-	font-size:				25pt
-	line-height:			28pt
+	font-size:				23pt
+	line-height:			25pt
 
 	margin-top:				9pt
-	margin-bottom:			5pt
+	margin-bottom:			3pt
 }
 
 heading-2 {
@@ -110,12 +93,13 @@ heading-4 {
 }
 
 heading-5 {
-	font-family: 			"SF Mono"
-	font-size:				9pt
-	line-height:			12pt
-	
-	margin-top:				2pt
-	margin-bottom:			3pt
+  font-family:			"SF Pro Display"
+	font-size:				10.75pt
+	line-height:			16pt
+	font-weight: bold
+
+	margin-top:				4pt
+	margin-bottom:			0pt
 }
 
 
@@ -125,8 +109,23 @@ heading-5 {
 //
 
 area-footnotes {
-  font-size:         8.5pt
-  line-height:			13pt
+  font-size: 8.5pt
+  line-height: 13pt
+}
+
+
+
+//
+// Footer area
+//
+
+area-footer {
+  font-color: $accent
+  font-size: 8.5pt
+  text-alignment: left
+  content: page-number
+  top-spacing: 6pt
+  bottom-spacing: 40pt
 }
 
 
@@ -142,18 +141,8 @@ paragraph {
 	text-alignment:			left
 }
 
-paragraph:first {
-	margin-top:				0pt
-}
-
-heading-all + paragraph {
-	first-line-indent:		0pt
-	// Do not indent the first paragraph after any headline
-}
-
 paragraph-divider {
 	page-break:				after
-	visibility:				visible
 }
 
 
@@ -335,7 +324,7 @@ inline-emphasis {
 }
 
 inline-mark {
-	font-color:		#586CB2
+	font-color:		$secondary
 }
 
 inline-citation {
@@ -349,9 +338,9 @@ inline-code {
 }
 
 inline-link {
-	underline:				none
+	underline:				single
 	font-weight:			normal
-	font-color:				#586CB2
+	underline-color:  $secondary
 }
 
 inline-comment {
