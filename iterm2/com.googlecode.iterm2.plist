@@ -4,6 +4,363 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>Custom Color Presets</key>
+	<dict>
+		<key>fleet</key>
+		<dict>
+			<key>Ansi 0 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.40392157435417175</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.40392157435417175</real>
+				<key>Red Component</key>
+				<real>0.40392157435417175</real>
+			</dict>
+			<key>Ansi 1 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.32549020648002625</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.3490196168422699</real>
+				<key>Red Component</key>
+				<real>0.87450981140136719</real>
+			</dict>
+			<key>Ansi 10 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.57254904508590698</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.66274511814117432</real>
+				<key>Red Component</key>
+				<real>0.30980393290519714</real>
+			</dict>
+			<key>Ansi 11 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.41960784792900085</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.73333334922790527</real>
+				<key>Red Component</key>
+				<real>0.87058824300765991</real>
+			</dict>
+			<key>Ansi 12 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.92549020051956177</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.60784316062927246</real>
+				<key>Red Component</key>
+				<real>0.3803921639919281</real>
+			</dict>
+			<key>Ansi 13 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.83921569585800171</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.43529412150382996</real>
+				<key>Red Component</key>
+				<real>0.83529412746429443</real>
+			</dict>
+			<key>Ansi 14 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.73333334922790527</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.81960785388946533</real>
+				<key>Red Component</key>
+				<real>0.54901963472366333</real>
+			</dict>
+			<key>Ansi 15 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86274510622024536</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.83921569585800171</real>
+				<key>Red Component</key>
+				<real>0.83921569585800171</real>
+			</dict>
+			<key>Ansi 2 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.57254904508590698</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.66274511814117432</real>
+				<key>Red Component</key>
+				<real>0.30980393290519714</real>
+			</dict>
+			<key>Ansi 3 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.41960784792900085</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.73333334922790527</real>
+				<key>Red Component</key>
+				<real>0.87058824300765991</real>
+			</dict>
+			<key>Ansi 4 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.92549020051956177</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.60784316062927246</real>
+				<key>Red Component</key>
+				<real>0.3803921639919281</real>
+			</dict>
+			<key>Ansi 5 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.83921569585800171</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.43529412150382996</real>
+				<key>Red Component</key>
+				<real>0.83529412746429443</real>
+			</dict>
+			<key>Ansi 6 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.73333334922790527</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.81960785388946533</real>
+				<key>Red Component</key>
+				<real>0.54901963472366333</real>
+			</dict>
+			<key>Ansi 7 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86274510622024536</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.83921569585800171</real>
+				<key>Red Component</key>
+				<real>0.83921569585800171</real>
+			</dict>
+			<key>Ansi 8 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.40392157435417175</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.40392157435417175</real>
+				<key>Red Component</key>
+				<real>0.40392157435417175</real>
+			</dict>
+			<key>Ansi 9 Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.32549020648002625</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.3490196168422699</real>
+				<key>Red Component</key>
+				<real>0.87450981140136719</real>
+			</dict>
+			<key>Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.098039217293262482</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.098039217293262482</real>
+				<key>Red Component</key>
+				<real>0.098039217293262482</real>
+			</dict>
+			<key>Badge Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.5</real>
+				<key>Blue Component</key>
+				<real>0.13960540294647217</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.25479039549827576</real>
+				<key>Red Component</key>
+				<real>0.92929404973983765</real>
+			</dict>
+			<key>Bold Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>1</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>0.99999994039535522</real>
+			</dict>
+			<key>Cursor Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86274510622024536</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.83921569585800171</real>
+				<key>Red Component</key>
+				<real>0.83921569585800171</real>
+			</dict>
+			<key>Cursor Guide Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>0.25</real>
+				<key>Blue Component</key>
+				<real>0.99125725030899048</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.92047786712646484</real>
+				<key>Red Component</key>
+				<real>0.74862593412399292</real>
+			</dict>
+			<key>Cursor Text Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.12978729605674744</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.12978729605674744</real>
+				<key>Red Component</key>
+				<real>0.12978729605674744</real>
+			</dict>
+			<key>Foreground Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.86274510622024536</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.83921569585800171</real>
+				<key>Red Component</key>
+				<real>0.83921569585800171</real>
+			</dict>
+			<key>Link Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.7093239426612854</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.35333043336868286</real>
+				<key>Red Component</key>
+				<real>0.14513972401618958</real>
+			</dict>
+			<key>Match Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
+			<key>Selected Text Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.0</real>
+				<key>Red Component</key>
+				<real>0.0</real>
+			</dict>
+			<key>Selection Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.44325470924377441</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.28076976537704468</real>
+				<key>Red Component</key>
+				<real>0.15495115518569946</real>
+			</dict>
+		</dict>
+	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>DA81BCAC-9487-44A7-8428-3B34EC03BDB1</string>
 	<key>DisableFullscreenTransparency</key>
@@ -27,158 +384,226 @@
 			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.40392156862745099</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.40392156862745099</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.40392156862745099</real>
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.32549019607843138</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.34901960784313724</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.87450980392156863</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
-				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
-				<key>Green Component</key>
+				<key>Alpha Component</key>
 				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.5725490196078431</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.66274509803921566</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.30980392156862746</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.41960784313725491</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.73333333333333328</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.87058823529411766</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
-				<key>Blue Component</key>
+				<key>Alpha Component</key>
 				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.92549019607843142</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.60784313725490191</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.38039215686274508</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.83921568627450982</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.43529411764705883</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.83529411764705885</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.73333333333333328</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.81960784313725488</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.5490196078431373</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.86274509803921573</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.83921568627450982</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.83921568627450982</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.5725490196078431</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.66274509803921566</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.30980392156862746</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.41960784313725491</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.73333333333333328</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.87058823529411766</real>
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.92549019607843142</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.60784313725490191</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.38039215686274508</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.43529411764705883</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83529411764705885</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.73333333333333328</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.81960784313725488</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.5490196078431373</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.86274509803921573</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.40392156862745099</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.40392156862745099</real>
 				<key>Red Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.40392156862745099</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
-				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
-				<key>Green Component</key>
-				<real>0.3333333432674408</real>
-				<key>Red Component</key>
+				<key>Alpha Component</key>
 				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.32549019607843138</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>0.34901960784313724</real>
+				<key>Red Component</key>
+				<real>0.87450980392156863</real>
 			</dict>
 			<key>BM Growl</key>
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.098039215686274508</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.098039215686274508</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.098039215686274508</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -187,13 +612,13 @@
 				<key>Alpha Component</key>
 				<real>0.5</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.13960540294647217</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.14910030364990234</real>
+				<real>0.25479039549827576</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.92929404973983765</real>
 			</dict>
 			<key>Blink Allowed</key>
 			<false/>
@@ -203,12 +628,16 @@
 			<false/>
 			<key>Bold Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
 				<real>1</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
 				<real>1</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.99999994039535522</real>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -220,34 +649,38 @@
 			<string></string>
 			<key>Cursor Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.86274509803921573</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>0.25</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.99125725030899048</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.92681378126144409</real>
+				<real>0.92047786712646484</real>
 				<key>Red Component</key>
-				<real>0.70214027166366577</real>
+				<real>0.74862593412399292</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.098000000000000004</real>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.098000000000000004</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.098000000000000004</real>
 			</dict>
 			<key>Custom Command</key>
 			<string>No</string>
@@ -263,12 +696,16 @@
 			<false/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.86274509803921573</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.83921568627450982</real>
 			</dict>
 			<key>Guid</key>
 			<string>DA81BCAC-9487-44A7-8428-3B34EC03BDB1</string>
@@ -571,13 +1008,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73422706127166748</real>
+				<real>0.7093239426612854</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.35915294289588928</real>
+				<real>0.35333043336868286</real>
 				<key>Red Component</key>
+				<real>0.14513972401618958</real>
+			</dict>
+			<key>Match Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
 				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
 			</dict>
 			<key>Mouse Reporting</key>
 			<true/>
@@ -605,8 +1055,12 @@
 			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
 				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
 				<key>Green Component</key>
 				<real>0.0</real>
 				<key>Red Component</key>
@@ -615,11 +1069,11 @@
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.38040000000000002</real>
 				<key>Green Component</key>
-				<real>0.8353000283241272</real>
+				<real>0.2157</real>
 				<key>Red Component</key>
-				<real>0.70980000495910645</real>
+				<real>0.086300000000000002</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -710,5 +1164,318 @@
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
+	<key>kCPFavoritesUserDefaultsKey</key>
+	<array>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFVCbGFja9USExQV
+		FhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJOU0N1
+		c3RvbUNvbG9yU3BhY2VWJGNsYXNzRzAgMCAwIDFGMCAwIDAAEAGAA4AG0x0W
+		Hh8gIVVOU0lDQ1lOU1NwYWNlSUSABIAFEAxPEQIYAAACGGFwcGwEAAAAbW50
+		clJHQiBYWVogB+YAAQABAAAAAAAAYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAA
+		AAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBs7P2jjjiFR8NttL1PetoYLwAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAAAwY3BydAAA
+		ASwAAABQd3RwdAAAAXwAAAAUclhZWgAAAZAAAAAUZ1hZWgAAAaQAAAAUYlhZ
+		WgAAAbgAAAAUclRSQwAAAcwAAAAgY2hhZAAAAewAAAAsYlRSQwAAAcwAAAAg
+		Z1RSQwAAAcwAAAAgbWx1YwAAAAAAAAABAAAADGVuVVMAAAAUAAAAHABEAGkA
+		cwBwAGwAYQB5ACAAUAAzbWx1YwAAAAAAAAABAAAADGVuVVMAAAA0AAAAHABD
+		AG8AcAB5AHIAaQBnAGgAdAAgAEEAcABwAGwAZQAgAEkAbgBjAC4ALAAgADIA
+		MAAyADJYWVogAAAAAAAA9tUAAQAAAADTLFhZWiAAAAAAAACD3wAAPb////+7
+		WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEA
+		AAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//
+		8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7SJCUmJ1okY2xhc3NuYW1lWCRj
+		bGFzc2VzXE5TQ29sb3JTcGFjZaIoKVxOU0NvbG9yU3BhY2VYTlNPYmplY3TS
+		JCUrLFdOU0NvbG9yoisp0hYuLzBZTlMuc3RyaW5ngAhfECRBRTU3N0QxRC1G
+		OTJCLTRENUUtOEI2Mi00OEZDNTJBOERFOUPSJCUyM18QD05TTXV0YWJsZVN0
+		cmluZ6MyNClYTlNTdHJpbmcACAARABoAJAApADIANwBJAFAAVQBbAGYAaABq
+		AGwAdgB8AIIAjQCaAKAArQDCAMkA0QDYANoA3ADeAOUA6wD1APcA+QD7AxcD
+		HAMnAzADPQNAA00DVgNbA2MDZgNrA3UDdwOeA6MDtQO5AAAAAAAAAgEAAAAA
+		AAAANQAAAAAAAAAAAAAAAAAAA8I=
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFgxMCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuMSAwLjEgMC4xIDFPECcwLjA3
+		NzUyNDQ4MzIgMC4wNzc1MjQ0ODMyIDAuMDc3NTI0NDgzMgAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJEMzMUYwQTI3LUM4
+		NTUtNDcwQS05QTUwLTM2Qzk4NUU2RDZEQ9IkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFgyMCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuMiAwLjIgMC4yIDFPECcwLjE1
+		MDU2MjUwOTkgMC4xNTA1NjI1MDk5IDAuMTUwNTYyNTA5OQAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJDU0Nzg3MEUwLTdF
+		OUQtNDI3OC05MTA1LTY0N0FCMEYzOEY2QtIkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFgzMCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuMyAwLjMgMC4zIDFPECcwLjIz
+		NDA0NTk4MjQgMC4yMzQwNDU5ODI0IDAuMjM0MDQ1OTgyNAAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJDY5OTUwQUE3LTI5
+		OTEtNEFGMy05OTYyLTY5RTRFNkM4Q0U4NtIkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg0MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNCAwLjQgMC40IDFPECcwLjMy
+		NTg0NTU5OTIgMC4zMjU4NDU1OTkyIDAuMzI1ODQ1NTk5MgAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJDJBREREQ0I0LUIx
+		RDktNDY5NC05RjRBLTVENDk3QzdGMTMyQtIkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg1MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNSAwLjUgMC41IDFPECcwLjQy
+		NDY3MjQyNDggMC40MjQ2NzIzNjUyIDAuNDI0NjcyMzY1MgAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJERGRkY3Q0Y3LTYw
+		NDUtNDdDNS04Q0UxLTBDMzY0OEJDQzVBNNIkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg2MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNiAwLjYgMC42IDFPECcwLjUy
+		OTY0NTMyMzggMC41Mjk2NDUzMjM4IDAuNTI5NjQ1MzIzOAAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJDVGQTU3REVBLTBF
+		QjEtNEVDMy05NjI5LTVGMzBGREUyMjZGNNIkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg3MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuNyAwLjcgMC43IDFPECEwLjY0
+		MDExNjkzIDAuNjQwMTE2OTMgMC42NDAxMTY5MwAQAYADgAbTHRYeHyAhVU5T
+		SUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRyUkdCIFhZ
+		WiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAAAAAA
+		AAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAABLAAAAFB3
+		dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFlaAAABuAAA
+		ABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBnVFJDAAAB
+		zAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBzAHAAbABh
+		AHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMAbwBwAHkA
+		cgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAwADIAMlhZ
+		WiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tYWVogAAAA
+		AAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAAAAAAAwAA
+		AAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///zJgAAB5MA
+		AP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNsYXNzZXNc
+		TlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIkJSssV05T
+		Q29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJEUyRjFGMjY2LTVFNTUtNDg2
+		RC05REE1LTQ1Mjk4RjdEMTYxRNIkJTIzXxAPTlNNdXRhYmxlU3RyaW5nozI0
+		KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoAbAB2AHwA
+		hQCQAJ0AowCwAMUAzADaAP4BAAECAQQBCwERARsBHQEfASEDPQNCA00DVgNj
+		A2YDcwN8A4EDiQOMA5EDmwOdA8QDyQPbA98AAAAAAAACAQAAAAAAAAA1AAAA
+		AAAAAAAAAAAAAAAD6A==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg4MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuOCAwLjggMC44IDFPECQwLjc1
+		NTU4NzY5NyAwLjc1NTU4NzY5NyAwLjc1NTU4NzY5NwAQAYADgAbTHRYeHyAh
+		VU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRyUkdC
+		IFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAAAAAA
+		AAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAABLAAA
+		AFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFlaAAAB
+		uAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBnVFJD
+		AAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBzAHAA
+		bABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMAbwBw
+		AHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAwADIA
+		MlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tYWVog
+		AAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAAAAAA
+		AwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///zJgAA
+		B5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNsYXNz
+		ZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIkJSss
+		V05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJDUyRTk0QjE0LUY4MzMt
+		NEVFQi04NTc0LTEzMzUxRTQwMTYwOdIkJTIzXxAPTlNNdXRhYmxlU3RyaW5n
+		ozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoAbAB2
+		AHwAhQCQAJ0AowCwAMUAzADaAQEBAwEFAQcBDgEUAR4BIAEiASQDQANFA1AD
+		WQNmA2kDdgN/A4QDjAOPA5QDngOgA8cDzAPeA+IAAAAAAAACAQAAAAAAAAA1
+		AAAAAAAAAAAAAAAAAAAD6w==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFg5MCUgR3JhedUS
+		ExQVFhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJO
+		U0N1c3RvbUNvbG9yU3BhY2VWJGNsYXNzTTAuOSAwLjkgMC45IDFPECcwLjg3
+		NTY1ODAzNTMgMC44NzU2NTgwMzUzIDAuODc1NjU3OTE2MQAQAYADgAbTHRYe
+		HyAhVU5TSUNDWU5TU3BhY2VJRIAEgAUQDE8RAhgAAAIYYXBwbAQAAABtbnRy
+		UkdCIFhZWiAH5gABAAEAAAAAAABhY3NwQVBQTAAAAABBUFBMAAAAAAAAAAAA
+		AAAAAAAAAAAA9tYAAQAAAADTLWFwcGzs/aOOOIVHw220vU962hgvAAAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApkZXNjAAAA/AAAADBjcHJ0AAAB
+		LAAAAFB3dHB0AAABfAAAABRyWFlaAAABkAAAABRnWFlaAAABpAAAABRiWFla
+		AAABuAAAABRyVFJDAAABzAAAACBjaGFkAAAB7AAAACxiVFJDAAABzAAAACBn
+		VFJDAAABzAAAACBtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABQAAAAcAEQAaQBz
+		AHAAbABhAHkAIABQADNtbHVjAAAAAAAAAAEAAAAMZW5VUwAAADQAAAAcAEMA
+		bwBwAHkAcgBpAGcAaAB0ACAAQQBwAHAAbABlACAASQBuAGMALgAsACAAMgAw
+		ADIAMlhZWiAAAAAAAAD21QABAAAAANMsWFlaIAAAAAAAAIPfAAA9v////7tY
+		WVogAAAAAAAASr8AALE3AAAKuVhZWiAAAAAAAAAoOAAAEQsAAMi5cGFyYQAA
+		AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltzZjMyAAAAAAABDEIAAAXe///z
+		JgAAB5MAAP2Q///7ov///aMAAAPcAADAbtIkJSYnWiRjbGFzc25hbWVYJGNs
+		YXNzZXNcTlNDb2xvclNwYWNloigpXE5TQ29sb3JTcGFjZVhOU09iamVjdNIk
+		JSssV05TQ29sb3KiKynSFi4vMFlOUy5zdHJpbmeACF8QJDU4NDc1ODYzLUI4
+		QzItNDYzMC05ODYyLUIyMkZEMzhBRTJBONIkJTIzXxAPTlNNdXRhYmxlU3Ry
+		aW5nozI0KVhOU1N0cmluZwAIABEAGgAkACkAMgA3AEkAUABVAFsAZgBoAGoA
+		bAB2AHwAhQCQAJ0AowCwAMUAzADaAQQBBgEIAQoBEQEXASEBIwElAScDQwNI
+		A1MDXANpA2wDeQOCA4cDjwOSA5cDoQOjA8oDzwPhA+UAAAAAAAACAQAAAAAA
+		AAA1AAAAAAAAAAAAAAAAAAAD7g==
+		</data>
+		<data>
+		YnBsaXN0MDDUAQIDBAUGBw5YJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9i
+		amVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctMICQoLDA1UbmFtZVVjb2xv
+		clppZGVudGlmaWVygAGAAoAHqQ8QERwiIyotMVUkbnVsbFVXaGl0ZdUSExQV
+		FhcYGRobXE5TQ29tcG9uZW50c1VOU1JHQlxOU0NvbG9yU3BhY2VfEBJOU0N1
+		c3RvbUNvbG9yU3BhY2VWJGNsYXNzRzEgMSAxIDFGMSAxIDEAEAGAA4AG0x0W
+		Hh8gIVVOU0lDQ1lOU1NwYWNlSUSABIAFEAxPEQIYAAACGGFwcGwEAAAAbW50
+		clJHQiBYWVogB+YAAQABAAAAAAAAYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAA
+		AAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBs7P2jjjiFR8NttL1PetoYLwAAAAAA
+		AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAAAwY3BydAAA
+		ASwAAABQd3RwdAAAAXwAAAAUclhZWgAAAZAAAAAUZ1hZWgAAAaQAAAAUYlhZ
+		WgAAAbgAAAAUclRSQwAAAcwAAAAgY2hhZAAAAewAAAAsYlRSQwAAAcwAAAAg
+		Z1RSQwAAAcwAAAAgbWx1YwAAAAAAAAABAAAADGVuVVMAAAAUAAAAHABEAGkA
+		cwBwAGwAYQB5ACAAUAAzbWx1YwAAAAAAAAABAAAADGVuVVMAAAA0AAAAHABD
+		AG8AcAB5AHIAaQBnAGgAdAAgAEEAcABwAGwAZQAgAEkAbgBjAC4ALAAgADIA
+		MAAyADJYWVogAAAAAAAA9tUAAQAAAADTLFhZWiAAAAAAAACD3wAAPb////+7
+		WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEA
+		AAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//
+		8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7SJCUmJ1okY2xhc3NuYW1lWCRj
+		bGFzc2VzXE5TQ29sb3JTcGFjZaIoKVxOU0NvbG9yU3BhY2VYTlNPYmplY3TS
+		JCUrLFdOU0NvbG9yoisp0hYuLzBZTlMuc3RyaW5ngAhfECQyMzEyRDcyMi02
+		RkZGLTQzMTItOUFBRC0xMjQxMkEzRUMxQkTSJCUyM18QD05TTXV0YWJsZVN0
+		cmluZ6MyNClYTlNTdHJpbmcACAARABoAJAApADIANwBJAFAAVQBbAGYAaABq
+		AGwAdgB8AIIAjQCaAKAArQDCAMkA0QDYANoA3ADeAOUA6wD1APcA+QD7AxcD
+		HAMnAzADPQNAA00DVgNbA2MDZgNrA3UDdwOeA6MDtQO5AAAAAAAAAgEAAAAA
+		AAAANQAAAAAAAAAAAAAAAAAAA8I=
+		</data>
+	</array>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>

@@ -113,6 +113,10 @@ area-footnotes {
   line-height: 13pt
 }
 
+inline-footnote paragraph {
+  margin-top: 1.5pt
+  margin-bottom: 1.5pt
+}
 
 
 //
