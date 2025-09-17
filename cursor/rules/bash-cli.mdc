@@ -1,0 +1,162 @@
+---
+description: Provides guidance for one-off bash cli scripts.
+alwaysApply: false
+---
+
+Rules for writing lightweight Bash CLIs for one-off automation where safety,
+speed, and maintainability all matter.
+
+## Structure
+- **Strict mode**: `set -Eeuo pipefail` and `IFS=$'\n\t'`
+- **Metadata**: `NAME`, `VERSION`, `DESCRIPTION`, `USAGE` at top
+- **Traps**: `ERR` and `EXIT` traps (`on_err`, `on_exit`)
+- **Single entrypoint**: `main "$@"` at bottom; all logic in functions
+- **Standard flags**: `--dry-run`, `--quiet`, `--verbose`, `--force`,
+  `--help`, `--version`
+- **Exit codes**: 0 success; 2 usage; 3 dependency; 4 runtime
+
+## Safety
+- Validate paths early with `realpath`; quote expansions
+- Route side effects through `run`; respect `--dry-run`
+- Destructive actions require `--force` or confirmation
+- Use `find -print0 | xargs -0`; temp files via `mktemp`
+
+## Output
+- Honor `CI` env and `--ci` flag for colors
+- Levels: `info`, `ok`, `warn`, `err`, `dbg` (with verbose check)
+- Interactive: `gum choose` → `fzf` → `select` fallbacks
+
+## Commands
+- Prefix functions with `cmd_`; route in main case statement
+- Multi-step operations: validate early, process with status updates
+
+## Minimal Bash CLI skeleton
+```bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
+IFS=$'\n\t'
+
+NAME="projectctl"
+VERSION="0.1.0"
+DESCRIPTION="Lightweight project helper"
+USAGE="
+$NAME [options] <command> [args...]
+
+Options:
+  -n, --dry-run       Print commands without executing
+  -q, --quiet         Minimal output
+  -v, --verbose       Increase output (repeatable)
+  -f, --force         Skip confirmations
+      --ci             Disable colors and spinners (CI mode)
+  -h, --help          Show help
+      --version       Show version
+
+Commands:
+  init <dir>          Create and initialize a project directory
+  clean <dir>         Remove a project directory
+  choose              Select a project interactively
+  self-test           Run built-in checks
+"
+
+on_exit() { :; }
+on_err()  { printf "✗ runtime failure on line %s\n" "$LINENO" >&2; exit 4; }
+trap on_err ERR
+trap on_exit EXIT
+
+DRY_RUN=false
+QUIET=false
+VERBOSE=0
+CI_MODE=false
+FORCE=false
+
+# Initialize colors early
+BOLD="" RESET="" BLUE="" GREEN="" YELLOW="" RED=""
+
+_init_colors() {
+  if [[ -n "${CI:-}" || $CI_MODE == true ]]; then COLOR=false; else COLOR=true; fi
+  if command -v tput >/dev/null 2>&1 && $COLOR; then
+    BOLD=$(tput bold) || BOLD=""
+    RESET=$(tput sgr0) || RESET=""
+    BLUE=$(tput setaf 4) || BLUE=""
+    GREEN=$(tput setaf 2) || GREEN=""
+    YELLOW=$(tput setaf 3) || YELLOW=""
+    RED=$(tput setaf 1) || RED=""
+  else
+    BOLD="" RESET="" BLUE="" GREEN="" YELLOW="" RED=""
+  fi
+}
+
+_log() { local lvl="$1"; shift; $QUIET && [[ "$lvl" != ok && "$lvl" != err ]] && return 0; printf "%s\n" "$@"; }
+info() { _log info "${BLUE}ℹ${RESET} $*"; }
+ok()   { _log ok   "${GREEN}✓${RESET} $*"; }
+warn() { _log warn "${YELLOW}⚠${RESET} $*"; }
+err()  { _log err  "${RED}✗${RESET} $*" 1>&2; }
+dbg()  { (( VERBOSE > 0 )) && printf "… %s\n" "$*" || true; }
+
+run() {
+  dbg "running: $*"
+  if $DRY_RUN; then printf "+ %s\n" "$*"; else "$@"; fi
+}
+
+confirm() {
+  $FORCE && return 0
+  printf "%s? [y/N] " "$1"; read -r reply; [[ "$reply" == y || "$reply" == Y ]]
+}
+
+choose() {
+  if command -v gum >/dev/null 2>&1; then gum choose "$@"; return
+  elif command -v fzf >/dev/null 2>&1; then printf "%s\n" "$@" | fzf; return
+  fi
+  select item in "$@"; do printf "%s\n" "$item"; break; done
+}
+
+print_help() { printf "%s\n" "$USAGE"; }
+
+parse_args() {
+  local argv=()
+  while (($#)); do case "$1" in
+    -n|--dry-run) DRY_RUN=true;;
+    -q|--quiet) QUIET=true;;
+    -v|--verbose) ((VERBOSE++));;
+    -f|--force) FORCE=true;;
+    --ci) CI_MODE=true;;
+    -h|--help) print_help; exit 0;;
+    --version) printf "%s %s\n" "$NAME" "$VERSION"; exit 0;;
+    -*) # support stacked short flags like -nqv
+        if [[ "$1" =~ ^-[a-zA-Z]{2,}$ ]]; then
+          local i; for ((i=1;i<${#1};i++)); do parse_args "-${1:i:1}"; done
+        else err "unknown option: $1"; exit 2; fi;;
+    *) argv+=("$1");;
+  esac; shift; done
+  set -- "${argv[@]+"${argv[@]}"}"; ARGS=("$@")
+}
+
+cmd_init()  { local dir="$1"; [[ -z "$dir" ]] && err "missing dir" && exit 2; info "Creating project at $dir"; run mkdir -p "$dir"; run touch "$dir/.project"; ok "Project initialized: $dir"; }
+cmd_clean() { local dir="$1"; [[ -z "$dir" ]] && err "missing dir" && exit 2; confirm "Remove $dir" || { warn "aborted"; return; }; info "Removing project $dir"; run rm -rf -- "$dir"; ok "Removed $dir"; }
+cmd_choose(){ local choice; choice=$(choose demo-alpha demo-beta demo-gamma); ok "you chose: $choice"; }
+cmd_self_test(){ info "Running self-test"; command -v bash >/dev/null || { err "bash missing"; exit 3; }; if command -v shellcheck >/dev/null; then ok "shellcheck available"; else warn "shellcheck missing"; fi; DRY_RUN=true run echo ok >/dev/null; ok "dry-run working"; ok "self-test passed"; }
+
+main() {
+  _init_colors
+  parse_args "$@"
+  
+  local cmd="${ARGS[0]-}"
+  
+  case "$cmd" in
+    init)  cmd_init "${ARGS[1]-}";;
+    clean) cmd_clean "${ARGS[1]-}";;
+    choose) cmd_choose;;
+    self-test) cmd_self_test;;
+    ""|-h|--help) print_help;;
+    *) err "unknown command: $cmd"; print_help; exit 2;;
+  esac
+}
+
+main "$@"
+```
+
+## Strict mode fixes
+- Use `"${array[@]+"${array[@]}"}` for empty array expansion
+- Add `|| true` to conditional expressions: `(( VERBOSE > 0 )) && printf "…" || true`
+- Add error handling to tput: `BOLD=$(tput bold) || BOLD=""`
+- Use `tr -d ' '` to clean `wc -l` output

@@ -1,0 +1,42 @@
+---
+description: Provides general Typescript best practices.
+globs: *.ts
+alwaysApply: false
+---
+
+Follow these rules when writing Typescript code:
+
+- Avoid using any or unknown, use strong typing whenever possible.
+- Avoid using non-null assertions (!).
+
+## Functions
+
+On functions, when reasonable, use JSDoc comments with a brief description, .\n,
+tags, and examples when simple enough (@example add(1, 2) // => 3). Always make
+sure JSDoc comments are up to date.
+<example>
+```
+/**
+ * Fetch a single ArtifactEnrichment by id.
+ *
+ * @param {string} id — The id of the ArtifactEnrichment
+ * @returns {Promise<ArtifactEnrichment | null>} — Promise resolving to the ArtifactEnrichment model or null
+ */
+public artifactEnrichmentById(
+    id: string,
+): Promise<ArtifactEnrichment | null> { ... }
+```
+</example>
+
+## Classes
+
+On classes, use block comments.
+<example>
+```
+/**
+ * Handles user authentication and session management.
+ */
+class AuthService { ... }
+```
+</example>
+    

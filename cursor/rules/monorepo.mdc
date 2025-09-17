@@ -1,0 +1,295 @@
+---
+description: Provides guidance on how to structure monorepos with Turborepo.
+alwaysApply: false
+---
+
+Follow these rules when structuring and managing monorepos with Turborepo:
+
+- Separate `apps/` (deployable services) from `packages/` (shared libraries)
+- Use pnpm workspaces with Turborepo for build orchestration
+- Use scoped packages (`@org/package-name`) for internal packages
+- Reference internal packages with `workspace:*` syntax
+- Use `^build` to depend on upstream package builds in task graph
+- Avoid circular dependencies in task graph
+- Install dependencies where they're used, not in root
+- Keep root dependencies minimal (only tools like `turbo`, `biome`)
+- Set concurrency limits to prevent resource exhaustion
+- Use package-specific task configurations for specialized builds
+
+## Repository Structure
+
+Root workspace configuration (package.json):
+<example>
+```json
+{
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "check": "turbo run //#check",
+    "check:changed": "turbo run //#check:changed",
+    "check:staged": "turbo run //#check:staged",
+    "fix": "turbo run //#fix",
+    "fix:changed": "turbo run //#fix:changed",
+    "fix:staged": "turbo run //#fix:staged",
+    "lint": "turbo run //#lint"
+  },
+  "devDependencies": {
+    "turbo": "latest",
+    "@biomejs/biome": "latest"
+  }
+}
+```
+</example>
+
+Workspace configuration (pnpm-workspace.yaml):
+<example>
+```yaml
+packages:
+  - "apps/*"
+  - "packages/*"
+```
+</example>
+
+Internal package configuration:
+<example>
+```json
+{
+  "name": "@org/package-name",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    "./*": {
+      "default": "./dist/*.js",
+      "types": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest"
+  }
+}
+```
+</example>
+
+## Task Configuration
+
+Complete Turborepo configuration (turbo.json):
+<example>
+```json
+{
+  "$schema": "https://turbo.build/schema.json",
+  "concurrency": "18",
+  "globalDependencies": [
+    "turbo.json",
+    "package.json",
+    "pnpm-lock.yaml",
+    "tsconfig.base.json",
+    "biome.json"
+  ],
+  "globalEnv": ["NODE_ENV", "TURBO_TEAM", "TURBO_TOKEN"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!**/*.test.{ts,tsx,js,jsx}",
+        "!**/*.spec.{ts,tsx,js,jsx}",
+        "!**/coverage/**",
+        "!**/.turbo/**"
+      ],
+      "outputLogs": "errors-only",
+      "outputs": ["dist/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "!**/.turbo/**"
+      ],
+      "outputLogs": "errors-only",
+      "outputs": ["coverage/**"]
+    },
+    "dev": {
+      "dependsOn": ["//#lint"],
+      "cache": false,
+      "outputLogs": "new-only",
+      "persistent": true
+    },
+    "//#check": {
+      "outputLogs": "new-only",
+      "outputs": []
+    },
+    "//#check:changed": {
+      "outputLogs": "new-only",
+      "outputs": []
+    },
+    "//#check:staged": {
+      "outputLogs": "new-only",
+      "outputs": []
+    },
+    "//#fix": {
+      "outputLogs": "new-only"
+    },
+    "//#fix:changed": {
+      "outputLogs": "new-only"
+    },
+    "//#fix:staged": {
+      "outputLogs": "new-only"
+    },
+    "//#lint": {
+      "outputLogs": "new-only"
+    }
+  }
+}
+```
+</example>
+
+Package-specific task overrides:
+<example>
+```json
+{
+  "@org/ui#build-storybook": {
+    "outputLogs": "errors-only",
+    "outputs": ["storybook-static/**"]
+  },
+  "@org/ui#dev": {
+    "cache": false,
+    "outputLogs": "new-only",
+    "persistent": true
+  }
+}
+```
+</example>
+
+## Code Quality
+
+Biome configuration (biome.json):
+<example>
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedKeys": "on"
+      }
+    },
+    "enabled": true
+  },
+  "css": {
+    "linter": {
+      "enabled": false
+    }
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**", ".github/workflows/**"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "useImportExtensions": "error"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
+  },
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
+}
+```
+</example>
+
+## TypeScript Configuration
+
+Base configuration in root:
+<example>
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  "extends": "@tsconfig/node20/tsconfig.json"
+}
+```
+</example>
+
+Package configuration:
+<example>
+```json
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules", "**/*.test.ts"]
+}
+```
+</example>
+
+## Package Strategies
+
+Use one of three compilation strategies:
+
+**Just-in-Time**: Export TypeScript directly, minimal config, no build step
+**Compiled**: Use `tsc` to build JavaScript outputs, cacheable by Turborepo  
+**Publishable**: Full npm registry publishing with versioning and changelogs
+
+## Development Workflow
+
+- Use `pnpm dev` for development (auto-lints before starting)
+- Use `pnpm test` for testing
+- Use `pnpm check` for full codebase quality check
+- Use `pnpm check:staged` for pre-commit validation
+- Use `pnpm fix` to auto-fix issues
+- Use `turbo run build --graph` to visualize task graph
+- Use `turbo run <task> --filter=<package>` for specific packages
+- Use `pnpm install` for dependency management
+- Use `pnpm add <package> --workspace-root` for root dependencies
+
+## Best Practices
+
+- Apps can depend on packages but not other apps
+- Packages can depend on other packages
+- Use semantic versioning for published packages
+- Use `sideEffects: false` for tree-shaking
+- Avoid accessing files across package boundaries with `../`
+- Use `imports` field for subpath imports instead of TypeScript paths
+- Configure concurrency limits based on available resources
+- Use `inputs` to exclude irrelevant files from task hashing
+- Use `outputLogs: "errors-only"` for build tasks to reduce noise
+- Use `outputLogs: "new-only"` for linting and dev tasks
+- Exclude test files and coverage from build inputs
+- Use package-specific task overrides for specialized builds (Storybook, etc.)
+- Set global environment variables for CI/CD integration

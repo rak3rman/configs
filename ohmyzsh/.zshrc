@@ -1,6 +1,6 @@
 #
 # zshrc (ohmyzsh)
-# Radison Akerman 2024
+# Radison Akerman 2024-2025
 #
 
 #
@@ -16,9 +16,43 @@ gpg-connect-agent /bye
 export GPG_TTY=$(tty)
 
 #
-# Homebrew
+# HOMEBREW
 #
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+#
+# NODE
+#
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+
+#
+# PNPM
+#
+export PNPM_HOME="/Users/rak3rman/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+#
+# ZSH COMPLETION
+#
+autoload -U compinit; compinit
+autoload -U +X bashcompinit && bashcompinit
+
+#
+# TERRAFORM
+#
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+#
+# GOOGLE CLOUD SDK
+#
+if [ -f '/Users/rak3rman/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/rak3rman/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+if [ -f '/Users/rak3rman/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/rak3rman/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"
 
 #
 # OH MY ZSH
@@ -130,4 +164,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-autoload -U compinit; compinit

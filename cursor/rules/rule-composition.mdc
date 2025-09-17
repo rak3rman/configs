@@ -1,0 +1,25 @@
+---
+description: Provides guidance for creating or editing rules.
+globs: rules/*.mdc
+alwaysApply: false
+---
+
+Rules are used to define how another agent behaves with reusable, composable,
+and scoped instructions.
+
+Rule specs must be high quality, concise, and to the point. Avoid filler words
+and language. Don't repeat yourself.
+
+Rule specs should be composed as specs — you are providing a set of guidelines
+and best practices on how to complete a tightly or widely scoped task. Organize
+your spec using Markdown. Sometimes a single, simple bulleted list of rules is
+enough. Other times a single, extensive example is enough.
+
+If the rule is complex, provide an example to clear up any nuances. This can be
+in the form of input -> output, accept and reject conditions, or something
+else.
+
+Constantly be looking for ways to raise the quality bar without imposing
+significant overhead. Research ways that exceptional software engineers are
+implementing the task at hand. Assume the consumer of this rule is highly
+technical and capable, but make sure to describe your requirements clearly.

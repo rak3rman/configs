@@ -1,2 +1,12 @@
-vim90/plugged
+# OS
 .DS_Store
+
+# Vim
+vim90/plugged
+
+# Cursor workspaces
+.cursor-workspaces
+
+# Cursor symlinked files
+.cursor/rules/*-local.mdc
+.cursor/commands/*-local.*
