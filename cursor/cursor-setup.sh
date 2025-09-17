@@ -5,6 +5,7 @@ IFS=$'\n\t'
 NAME="cursor-setup"
 VERSION="1.1.0"
 DESCRIPTION="Set up Cursor rules and commands symlinks for any workspace"
+SYMLINK_POSTFIX="local"
 USAGE="
 $NAME [options] [workspace-dir]
 
@@ -75,6 +76,7 @@ ok()   { _log ok   "${GREEN}✓${RESET} $*"; }
 warn() { _log warn "${YELLOW}⚠${RESET} $*"; }
 err()  { _log err  "${RED}✗${RESET} $*" 1>&2; }
 dbg()  { (( VERBOSE > 0 )) && printf "… %s\n" "$*" || true; }
+question() { printf "${BLUE}?${RESET} %s" "$*" >&2; }
 
 run() {
   dbg "running: $*"
@@ -83,7 +85,21 @@ run() {
 
 confirm() {
   $FORCE && return 0
-  printf "%s? [y/N] " "$1"; read -r reply; [[ "$reply" == y || "$reply" == Y ]]
+  question "$1 [y/N] "
+  read -r reply < /dev/tty
+  [[ "$reply" == y || "$reply" == Y ]]
+}
+
+confirm_directory_overwrite() {
+  local target_dir="$1" type_name="$2"
+  
+  if [[ -d "$target_dir" && ! $FORCE ]]; then
+    if ! confirm "Directory $target_dir already exists. Continue"; then
+      warn "aborted $type_name setup"
+      return 1
+    fi
+  fi
+  return 0
 }
 
 print_help() { printf "%s\n" "$USAGE"; }
@@ -206,7 +222,10 @@ load_workspaces() {
     else
       warn "saved workspace not found, skipping: $workspace_dir"
     fi
-  done < "$workspaces_file"
+  done < "$workspaces_file" || {
+    err "failed to read workspaces file"
+    return 1
+  }
   
   if (( ${#valid_workspaces[@]} == 0 )); then
     return 1
@@ -248,7 +267,11 @@ remove_workspace() {
         dbg "found match, removing: $workspace_dir" >&2
       fi
     done < "$workspaces_file"
-  } > "$temp_file"
+  } > "$temp_file" || {
+    run rm -f "$temp_file"
+    err "failed to process workspaces file"
+    return 1
+  }
   
   if $found; then
     run mv "$temp_file" "$workspaces_file"
@@ -268,17 +291,14 @@ cleanup_orphaned_files() {
     return 0
   fi
   
-  # Find all *-local.* files in target directory
+  # Find all *-${SYMLINK_POSTFIX}.* files in target directory
   while IFS= read -r -d '' target_file; do
     local basename_file local_name source_file
     basename_file=$(basename "$target_file")
     
-    # Extract original filename by removing -local suffix
-    if [[ "$basename_file" =~ ^(.+)-local(\.|$) ]]; then
-      local_name="${BASH_REMATCH[1]}"
-      if [[ -n "${BASH_REMATCH[2]}" && "${BASH_REMATCH[2]}" != "." ]]; then
-        local_name="${local_name}${BASH_REMATCH[2]}"
-      fi
+    # Extract original filename by removing -${SYMLINK_POSTFIX} suffix
+    if [[ "$basename_file" =~ ^(.+)-${SYMLINK_POSTFIX}(.*)$ ]]; then
+      local_name="${BASH_REMATCH[1]}${BASH_REMATCH[2]}"
     else
       continue
     fi
@@ -294,7 +314,7 @@ cleanup_orphaned_files() {
         warn "skipped orphaned file: $basename_file"
       fi
     fi
-  done < <(find "$target_dir" -name "*-local.*" -type f -print0)
+  done < <(find "$target_dir" -name "*-${SYMLINK_POSTFIX}.*" -type l -print0)
   
   if (( orphaned_count > 0 )); then
     ok "Cleaned up $orphaned_count orphaned $type_name file(s)"
@@ -370,11 +390,11 @@ create_local_symlink() {
   
   basename_file=$(basename "$source_file")
   
-  # Add -local postfix before file extension
+  # Add -${SYMLINK_POSTFIX} postfix before file extension
   if [[ "$basename_file" =~ \. ]]; then
-    local_name="${basename_file%.*}-local.${basename_file##*.}"
+    local_name="${basename_file%.*}-${SYMLINK_POSTFIX}.${basename_file##*.}"
   else
-    local_name="${basename_file}-local"
+    local_name="${basename_file}-${SYMLINK_POSTFIX}"
   fi
   target_link="$target_dir/$local_name"
   
@@ -389,9 +409,13 @@ create_local_symlink() {
     fi
   fi
   
-  run ln -s "$source_file" "$target_link"
-  ok "Linked $type_name: $basename_file -> $local_name"
-  return 0
+  if run ln -s "$source_file" "$target_link"; then
+    ok "Linked $type_name: $basename_file -> $local_name"
+    return 0
+  else
+    err "Failed to create symlink: $target_link -> $source_file"
+    return 1
+  fi
 }
 
 create_rule_symlinks() {
@@ -404,12 +428,7 @@ create_rule_symlinks() {
     return 1
   fi
   
-  if [[ -d "$target_dir" && ! $FORCE ]]; then
-    if ! confirm "Directory $target_dir already exists. Continue"; then
-      warn "aborted rules setup"
-      return 1
-    fi
-  fi
+  confirm_directory_overwrite "$target_dir" "rules" || return 1
   
   run mkdir -p "$target_dir"
   ok "Created rules directory: $target_dir"
@@ -441,12 +460,7 @@ create_command_symlinks() {
     return 1
   fi
   
-  if [[ -d "$target_dir" && ! $FORCE ]]; then
-    if ! confirm "Directory $target_dir already exists. Continue"; then
-      warn "aborted commands setup"
-      return 1
-    fi
-  fi
+  confirm_directory_overwrite "$target_dir" "commands" || return 1
   
   run mkdir -p "$target_dir"
   ok "Created commands directory: $target_dir"
@@ -471,8 +485,8 @@ create_command_symlinks() {
 update_gitignore() {
   local gitignore_file="$1"
   local -a entries=(
-    ".cursor/rules/*-local.mdc"
-    ".cursor/commands/*-local.*"
+    ".cursor/rules/*-${SYMLINK_POSTFIX}.mdc"
+    ".cursor/commands/*-${SYMLINK_POSTFIX}.*"
   )
   
   # Use single cursor section approach
@@ -500,13 +514,19 @@ update_gitignore() {
       {
         [[ ${#existing_entries[@]} -eq 0 ]] && printf "\n%s\n" "$cursor_section"
         printf "%s\n" "${new_entries[@]}"
-      } | run tee -a "$gitignore_file" >/dev/null
+      } | run tee -a "$gitignore_file" >/dev/null || {
+        err "Failed to update .gitignore"
+        return 1
+      }
     else
       info "Creating .gitignore with cursor entries"
       {
         printf "%s\n" "$cursor_section"
         printf "%s\n" "${entries[@]}"
-      } | run tee "$gitignore_file" >/dev/null
+      } | run tee "$gitignore_file" >/dev/null || {
+        err "Failed to create .gitignore"
+        return 1
+      }
     fi
     ok "Updated .gitignore"
   else
@@ -521,13 +541,13 @@ show_summary() {
   
   if [[ -d "$rules_target" ]]; then
     local rule_count
-    rule_count=$(find "$rules_target" -name "*-local.mdc" -type l 2>/dev/null | wc -l | tr -d ' ')
+    rule_count=$(find "$rules_target" -name "*-${SYMLINK_POSTFIX}.mdc" -type l 2>/dev/null | wc -l | tr -d ' ')
     printf "  Rules directory: %s (%s rules)\n" "$rules_target" "$rule_count"
   fi
   
   if [[ -d "$commands_target" ]]; then
     local command_count
-    command_count=$(find "$commands_target" -name "*-local.*" -type l 2>/dev/null | wc -l | tr -d ' ')
+    command_count=$(find "$commands_target" -name "*-${SYMLINK_POSTFIX}.*" -type l 2>/dev/null | wc -l | tr -d ' ')
     printf "  Commands directory: %s (%s commands)\n" "$commands_target" "$command_count"
   fi
   
