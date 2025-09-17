@@ -3,7 +3,7 @@ set -Eeuo pipefail
 IFS=$'\n\t'
 
 NAME="cursor-setup"
-VERSION="1.0.0"
+VERSION="1.1.0"
 DESCRIPTION="Set up Cursor rules and commands symlinks for any workspace"
 USAGE="
 $NAME [options] [workspace-dir]
@@ -15,8 +15,9 @@ Options:
   -n, --dry-run       Print commands without executing
   -q, --quiet         Minimal output
   -v, --verbose       Increase logging output
-  -f, --force         Skip confirmations and overwrite existing files
+  -f, --force         Skip confirmation and overwrites existing files
   -s, --save          Save workspace directory to .cursor-workspaces file
+  -c, --cleanup       Remove orphaned *-local.* files that no longer have source files
       --ci            Disable colors and spinners (CI mode)
   -h, --help          Show help
       --version       Show version
@@ -30,6 +31,7 @@ Commands:
 Examples:
   $NAME ~/projects/my-app           # Set up rules and commands for my-app workspace
   $NAME --save ~/projects/my-app    # Set up and save workspace for future runs
+  $NAME --cleanup ~/projects/my-app # Set up and remove orphaned files
   $NAME update                      # Process all saved workspaces
   $NAME list                        # Show all saved workspaces
   $NAME remove ~/projects/old-app   # Remove workspace from saved list
@@ -48,6 +50,7 @@ VERBOSE=0
 CI_MODE=false
 FORCE=false
 SAVE_WORKSPACE=false
+CLEANUP=false
 
 # Initialize colors early
 BOLD="" RESET="" BLUE="" GREEN="" YELLOW="" RED=""
@@ -93,6 +96,7 @@ parse_args() {
     -v|--verbose) ((VERBOSE++));;
     -f|--force) FORCE=true;;
     -s|--save) SAVE_WORKSPACE=true;;
+    -c|--cleanup) CLEANUP=true;;
     --ci) CI_MODE=true;;
     -h|--help) printf "%s\n" "$USAGE"; exit 0;;
     --version) printf "%s %s\n" "$NAME" "$VERSION"; exit 0;;
@@ -256,6 +260,51 @@ remove_workspace() {
   fi
 }
 
+cleanup_orphaned_files() {
+  local source_dir="$1" target_dir="$2" type_name="$3"
+  local orphaned_count=0
+  
+  if [[ ! -d "$target_dir" ]]; then
+    return 0
+  fi
+  
+  # Find all *-local.* files in target directory
+  while IFS= read -r -d '' target_file; do
+    local basename_file local_name source_file
+    basename_file=$(basename "$target_file")
+    
+    # Extract original filename by removing -local suffix
+    if [[ "$basename_file" =~ ^(.+)-local(\.|$) ]]; then
+      local_name="${BASH_REMATCH[1]}"
+      if [[ -n "${BASH_REMATCH[2]}" && "${BASH_REMATCH[2]}" != "." ]]; then
+        local_name="${local_name}${BASH_REMATCH[2]}"
+      fi
+    else
+      continue
+    fi
+    
+    # Check if corresponding source file exists
+    source_file="$source_dir/$local_name"
+    if [[ ! -f "$source_file" ]]; then
+      if $FORCE || confirm "Remove orphaned $type_name file: $basename_file"; then
+        run rm -f -- "$target_file"
+        ok "Removed orphaned $type_name: $basename_file"
+        ((orphaned_count++))
+      else
+        warn "skipped orphaned file: $basename_file"
+      fi
+    fi
+  done < <(find "$target_dir" -name "*-local.*" -type f -print0)
+  
+  if (( orphaned_count > 0 )); then
+    ok "Cleaned up $orphaned_count orphaned $type_name file(s)"
+  else
+    dbg "No orphaned $type_name files found"
+  fi
+  
+  return 0
+}
+
 setup_cursor_workspace() {
   local workspace_dir="$1"
   
@@ -290,6 +339,13 @@ setup_cursor_workspace() {
   if (( setup_count == 0 )); then
     err "no source directories found - nothing to set up"
     return 1
+  fi
+  
+  # Cleanup orphaned files if requested
+  if $CLEANUP; then
+    info "Cleaning up orphaned files"
+    cleanup_orphaned_files "$rules_source" "$rules_target" "rules"
+    cleanup_orphaned_files "$commands_source" "$commands_target" "commands"
   fi
   
   # Update .gitignore
@@ -358,15 +414,18 @@ create_rule_symlinks() {
   run mkdir -p "$target_dir"
   ok "Created rules directory: $target_dir"
   
-  local link_count=0 source_file
+  local link_count=0 file_count=0 source_file
   while IFS= read -r -d '' source_file; do
+    ((file_count++))
     if create_local_symlink "$source_file" "$target_dir" "rules"; then
       ((link_count++))
     fi
   done < <(find "$source_dir" -name "*.mdc" -type f -print0)
   
-  if (( link_count == 0 )); then
+  if (( file_count == 0 )); then
     warn "No rules files found in $source_dir"
+  elif (( link_count == 0 )); then
+    warn "No rules files could be linked (all may already exist, use --force to overwrite)"
   fi
   
   return 0
@@ -392,15 +451,18 @@ create_command_symlinks() {
   run mkdir -p "$target_dir"
   ok "Created commands directory: $target_dir"
   
-  local link_count=0 source_file
+  local link_count=0 file_count=0 source_file
   while IFS= read -r -d '' source_file; do
+    ((file_count++))
     if create_local_symlink "$source_file" "$target_dir" "commands"; then
       ((link_count++))
     fi
   done < <(find "$source_dir" -type f -print0)
   
-  if (( link_count == 0 )); then
+  if (( file_count == 0 )); then
     warn "No commands files found in $source_dir"
+  elif (( link_count == 0 )); then
+    warn "No commands files could be linked (all may already exist, use --force to overwrite)"
   fi
   
   return 0
