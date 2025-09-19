@@ -1,0 +1,98 @@
+---
+description: Provides guidelines for schema field and table comments.
+globs: *.sql
+alwaysApply: false
+---
+
+Field Description Guidelines
+- Default to "entity" when describing fields that apply broadly across the model or could be reused in other schemas.
+- Use the specific type name (e.g., artifact, invoice, request) only when the field is tightly coupled to that domain object and cannot be generalized.
+- Always begin descriptions with "The …" for uniform tone.
+- Avoid redundant qualifiers like "final," "opaque," or "unique" unless required for correctness.
+- Keep phrasing terse, declarative, and consistent.
+- Identifiers (`*_id`):
+  - id: "The unique identifier of the entity."
+  - Foreign key format: "The ID of the <specific_type> associated with the entity."
+  - project_id: "The ID of the project associated with the entity."
+  - parent_artifact_id: "The ID of the parent artifact this entity derives from. Used when splitting artifacts, such as separating a PDF into individual pages."
+- Enums:
+  - Format: "The <dimension> of the entity."
+  - Example: "The role of the entity."
+- Storage and system fields:
+  - If they reflect external system metadata, reference the system and object type.
+  - Example: "The GCS identifier for the artifact's metadata state."
+  - For external orchestration systems, be specific about the relationship to this entity instance.
+  - temporal_workflow_id: "The Temporal workflow identifier associated with this <entity_type>."
+- Source metadata:
+  - Format: "The <attribute> of the source that produced the entity’s data."
+- Device metadata:
+  - Format: "The <attribute> of the device that recorded the entity’s data."
+- Timestamps:
+  - Format: "The timestamp when the entity was <action>."
+  - created_at: "The timestamp when the entity was created."
+  - updated_at: "The timestamp when the entity was last meaningfully updated."
+- Quantities with units:
+  - Format: "The total <quantity> of the entity in <unit>."
+- Bucketed totals:
+  - Format: "The <bucket> portion of the entity in <unit>."
+- Counts:
+  - Format: "The number of <things> related to the entity."
+- Status:
+  - Format: "The status of the entity."
+- Credentials / expiry:
+  - Format: "The timestamp when the <credential> expires."
+- Arrays:
+  - Format: "The list of <items> associated with the entity."
+- JSON blobs:
+  - Format: "Raw data associated with the entity."
+- Creator fields:
+  - Format: "The ID of the <user> who created the entity."
+
+Table Comment Guidelines
+- Each table must have a single-sentence comment that defines what the entity represents.
+- Use the plural form of the entity type.
+- Use the format “Table of <plural_type> representing <primary_role_or_purpose>” for uniformity.
+- Keep it scoped, don't restate field-level details.
+
+<field-example>
+
+<input>
+id UUID PRIMARY KEY DEFAULT gen_random_uuid()
+project_id UUID NOT NULL REFERENCES projects(id)
+etag TEXT
+created_at TIMESTAMPTZ DEFAULT now()
+updated_at TIMESTAMPTZ DEFAULT now()
+</input>
+
+<output>
+COMMENT ON artifact.id IS 'The unique identifier of the entity.';
+COMMENT ON artifact.project_id IS 'The ID of the project the entity belongs to.';
+COMMENT ON artifact.etag IS 'The GCS identifier for the artifact's metadata state.';
+COMMENT ON artifact.created_at IS 'The timestamp when the entity was created.';
+COMMENT ON artifact.updated_at IS 'The timestamp when the entity was last meaningfully updated.';
+</output>
+
+</field-example>
+
+<table-example>
+
+<input>
+CREATE TABLE artifacts (
+  id UUID PRIMARY KEY,
+  ...
+);
+</input>
+
+<output>
+COMMENT ON TABLE artifact IS 'Table of artifacts representing uploaded data files associated with projects and data requests.';
+</output>
+
+<bad-example>
+COMMENT ON TABLE artifact IS 'This table stores all the data about artifacts including names, GCS info, and timestamps.'; -- Too verbose, duplicates field-level details
+</bad-example>
+
+<bad-example>
+COMMENT ON TABLE artifact IS 'Artifacts table.'; -- Too minimal
+</bad-example>
+
+</table-example>
